@@ -1,25 +1,16 @@
 # Examples inspired by David Foster Wallace's # (2/21/1962 to 9/12/2008) _Infinite Jest_
-
-DON_G = { name:  "Don Gately", occupation: "Live-in Staff" }
-JOELLE_VD = { name:  "Joelle van Dyne", occupation: "Radio Personality" }
-PAT_M =  { name:  "Pat Monteseian", occupation: "Staff" }
-KATE_G = { name:  "Kate Gompert", occupation: "None" }
-BRUCE_G = { name:  "Bruce Green", occupation: "Fan of Mildred" }
-
-def assembled_aoh
-  # Build an array that contains (or, "nests") the constants into a single
-  # Array. Ruby constants are denoted by ALL_CAPS
-end
-
-def literal_aoh
-  # Using Array literal syntax only, build a nested array that uses the data in
-  # held in the constants
-end
-
-def aoh_lookup(aoh, row, key)
-end
-
-def aoh_update(aoh, row, key, new_value)
-  # Update the AoH data at row and key to have the value of new_value
-  # Return the updated AoH
+def join_nested_strings(src)
+  final_string = ""
+  row_index = 0
+  while row_index < src.count do
+    element_index = 0
+    while element_index < src[row_index].count do      
+      if src[row_index][element_index].class == String
+        final_string += src[row_index][element_index] + ' '
+      end
+      element_index += 1
+    end
+    row_index += 1
+  end
+  final_string
 end
